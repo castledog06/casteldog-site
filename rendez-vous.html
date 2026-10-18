@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prendre rendez-vous – Castel Dog</title>
+  <meta name="description" content="Réservez un créneau de toilettage ou de pension canine chez Castel Dog.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-rdv">
+
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Castel Dog, accueil">
+        <img src="images/logo.png" alt="" width="46" height="40">
+        <span class="brand-name">Castel Dog</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav id="menu" class="nav" aria-label="Navigation principale">
+        <a href="index.html#prestations">Prestations</a>
+        <a href="index.html#tarifs">Tarifs</a>
+        <a href="index.html#pension">Pension</a>
+        <a href="index.html#infos">Horaires et accès</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="rdv">
+    <div class="wrap">
+      <a class="back" href="index.html">Retour à l’accueil</a>
+      <h1>Prendre rendez-vous</h1>
+      <p class="lead">Nous sommes ouverts du mardi au samedi, de 9 h à 18 h. Choisissez un jour, un créneau, puis dites-nous qui vient nous voir.</p>
+
+      <div class="rdv-grid">
+
+        <!-- Étape 1 : jour -->
+        <section class="calendar-card" aria-labelledby="cal-title">
+          <h2 class="step-title"><span class="step-n">1</span> Choisissez un jour</h2>
+          <div class="cal-head">
+            <button type="button" id="cal-prev" class="cal-nav" aria-label="Mois précédent">&lsaquo;</button>
+            <h3 id="cal-title" aria-live="polite">Mois</h3>
+            <button type="button" id="cal-next" class="cal-nav" aria-label="Mois suivant">&rsaquo;</button>
+          </div>
+          <div id="calendar" class="calendar" role="group" aria-labelledby="cal-title"></div>
+          <p class="legend"><span class="dot dot-closed"></span> Fermé le dimanche et le lundi</p>
+
+          <h2 class="step-title"><span class="step-n">2</span> Choisissez un créneau</h2>
+          <div id="slots" class="slots" aria-live="polite">
+            <p class="empty">Sélectionnez d’abord un jour dans le calendrier.</p>
+          </div>
+        </section>
+
+        <!-- Étape 3 : coordonnées -->
+        <section class="form-card" aria-labelledby="form-title">
+          <h2 id="form-title" class="step-title"><span class="step-n">3</span> Vos informations</h2>
+
+          <p id="summary" class="summary">Aucun créneau choisi pour l’instant.</p>
+
+          <form id="rdv-form" novalidate>
+            <div class="field">
+              <label for="prestation">Prestation</label>
+              <select id="prestation" name="prestation" required>
+                <option value="">Choisir une prestation</option>
+                <option value="toilettage">Toilettage complet</option>
+                <option value="bain">Bain et séchage</option>
+                <option value="epilation">Épilation</option>
+                <option value="griffes">Coupe des griffes</option>
+                <option value="oreilles">Nettoyage des oreilles</option>
+                <option value="chiot">Toilettage pour chiots</option>
+                <option value="pension">Pension canine (jour d’arrivée)</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="chien">Nom du chien</label>
+                <input id="chien" name="chien" type="text" autocomplete="off" required>
+              </div>
+              <div class="field">
+                <label for="taille">Taille</label>
+                <select id="taille" name="taille" required>
+                  <option value="">Choisir</option>
+                  <option value="petit">Petit, jusqu’à 8 kg</option>
+                  <option value="moyen">Moyen, 8 à 18 kg</option>
+                  <option value="grand">Grand, 18 à 30 kg</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="nom">Votre nom</label>
+                <input id="nom" name="nom" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="tel">Téléphone</label>
+                <input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Un mot sur votre chien <span class="opt">(facultatif)</span></label>
+              <textarea id="message" name="message" rows="3" placeholder="Race, état du pelage, caractère, souhaits de coupe…"></textarea>
+            </div>
+
+            <p id="form-error" class="form-error" role="alert" hidden></p>
+            <button type="submit" class="btn btn-block">Envoyer ma demande</button>
+            <p class="fine">Vous préférez parler à quelqu’un ? Appelez le <a href="tel:+33981373770">09 81 37 37 70</a>.</p>
+          </form>
+
+          <div id="confirmation" class="confirmation" hidden tabindex="-1">
+            <img src="images/logo.png" alt="" width="90" height="77">
+            <h3>Demande envoyée</h3>
+            <p id="confirm-text"></p>
+            <p class="fine">Nous vous confirmons le rendez-vous par téléphone.</p>
+            <button type="button" id="new-rdv" class="btn btn-ghost">Faire une autre demande</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p><strong>Castel Dog</strong>, toilettage canin. 10 Corniche André de Joly.</p>
+      <p><a href="tel:+33981373770">09 81 37 37 70</a> · <a href="https://www.instagram.com/casteldog06/" target="_blank" rel="noopener">@casteldog06</a></p>
+      <p class="small">© <span id="year">2026</span> Castel Dog. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
