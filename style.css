@@ -126,7 +126,7 @@ p  { margin: 0 0 1em; }
 
 .hero-art { position: relative; max-width: 420px; justify-self: center; width: 100%; }
 .hero-art .arch { aspect-ratio: 3 / 4.2; }
-.hero-art .arch img { object-fit: contain; padding: 8% 6% 4%; }
+.hero-art .arch img { object-fit: cover; padding: 8% 6% 4%; }
 .stamp { position: absolute; width: 112px; right: -22px; bottom: -26px; background: var(--paper); border-radius: 50%; padding: 10px; border: 2px solid var(--blush-2); }
 
 /* ---------- Sections ---------- */
