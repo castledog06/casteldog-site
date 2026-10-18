@@ -106,7 +106,7 @@ p  { margin: 0 0 1em; }
 /* ---------- Arches (écho de la coupole du logo) ---------- */
 .arch { border-radius: var(--radius-arch); overflow: hidden; margin: 0; }
 .arch-blush { background: var(--blush); border: 2px solid var(--blush-2); }
-.arch-blush img { mix-blend-mode: multiply; width: 120%; height: 120%; object-fit: cover; }
+.arch-blush img { mix-blend-mode: multiply; width: 320%; height: 200%; object-fit: cover; }
 .arch-photo { border: 2px solid var(--blush-2); }
 .arch-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 20%; }
 
